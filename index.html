@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>annimation draw effect</title>
+</head>
+<body>
+        <img src="./tets.jpg" width="100%">
+        <div class="container" id="container" ></div>
+        <script type="text/javascript">
+            let container = document.querySelector("#container");
+            let count = 50;
+            for(let i =0 ; i<count;i++ ){
+                let gooeyBox = document.createElement('div');
+                    gooeyBox.className='box';
+                    container.appendChild(gooeyBox);
+            }
+            setInterval(function(){
+            let gooey = document.getElementsByClassName('box');
+            for(let i =0 ; i<gooey.length;i++ ){
+                    gooey[i].style.left=Math.floor(Math.random()*100)+'vw'
+                    gooey[i].style.top=Math.floor(Math.random()*80)+'vh'
+                    gooey[i].style.right=Math.floor(Math.random()*110)+'vw'
+            }},2000)
+        </script>
+</body>
+</html>
